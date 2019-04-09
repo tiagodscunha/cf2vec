@@ -15,6 +15,7 @@ Folders:
 - metafeatures_graph: graph-based CF metafeatures (proposed in https://arxiv.org/abs/1807.09097)
 - metafeatures_landmarkers: subsampling landmarkers metafeatures (proposed in https://link.springer.com/chapter/10.1007/978-3-319-67786-6_14)
 - metafeatures_statistical: statistical and information theoretical metafeatures (proposed in https://link.springer.com/chapter/10.1007/978-3-319-46227-1_25)
+- meta_results: contains the metalevel evaluation results for all metamodels used
 - targets: multicriteria metatargets (proposed in https://arxiv.org/abs/1807.09097)
 
 Files:
