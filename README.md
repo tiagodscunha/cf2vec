@@ -12,8 +12,9 @@ Folders:
 - targets: multicriteria metatargets (proposed in https://arxiv.org/abs/1807.09097)
 
 Files:
-auxiliary.R: auxiliary functions to process metadata and metatargets
-meta_experiments.R: main file to evaluate Label Ranking metamodels using CM and cf2vec metafeatures
-LR_evaluation.R: Metalevel Label Ranking LOOCV evaluation procedure
-LR_tuning.R: Grid-search Tuning procedures for Label Ranking algorithms
+- auxiliary.R: auxiliary functions to process metadata and metatargets
+- LR_evaluation.R: Metalevel Label Ranking LOOCV evaluation procedure
+- LR_meta_experiments.R: main file to evaluate Label Ranking metamodels using CM and cf2vec metafeatures
+- LR_tuning.R: Grid-search Tuning procedures for Label Ranking algorithms
+- LR_grid_search_visualization.R: procedure used to create boxplot visualization for all configurations used in the hyperparameter tuning
 
