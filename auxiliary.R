@@ -1,3 +1,4 @@
+library(BBmisc)
 
 valuesToString <- function(x){
   paste0(paste0(x[1], " +- "), x[2])
@@ -30,7 +31,7 @@ replaceNA <- function(df){
 }
 
 normalizeMatrix <- function(df){
-  df1 <- as.data.frame(normalize(df))
+  df1 <- as.data.frame(BBmisc::normalize(df))
   colnames(df1) <- colnames(df)
   
   tmp <- data.frame(dataset=rownames(df))
