@@ -5,8 +5,13 @@ Collaborative Filtering dataset embeddings for algorithm selection
 Source code referring to the paper "cf2vec: Collaborative Filtering algorithm selection using graph distributed representations", available at https://arxiv.org/pdf/1809.06120.pdf.
 
 Abstract:
-Algorithm selection using Metalearning aims to find mappings between problem characteristics (i.e. metafeatures) with relative algorithm performance to predict the best algorithm(s) for new datasets. Therefore, it is of the utmost importance that the metafeatures used are informative. In Collaborative Filtering, recent research has created an extensive collection of such metafeatures. However, since these are created based on the practitioner’s understanding of the problem, they may not capture the most relevant aspects necessary to properly characterize the problem. We propose to overcome this problem by taking advantage of Representation Learning, which is able to create an alternative problem characterizations by having the data guide the design of the representation instead of the practitioner’s opinion. Our hypothesis states that such alternative representations can be used to replace standard metafeatures, hence hence leading to a more robust approach to Metalearning. We propose a novel procedure specially designed for Collaborative Filtering algorithm selection. The procedure models Collaborative Filtering as graphs and extracts distributed representations using graph2vec. Experimental results show that the proposed procedure creates representations that are competitive with state-of-the-art metafeatures, while requiring significantly less data and without virtually any human input.
+Algorithm selection using Metalearning aims to find mappings between problem characteristics (i.e. metafeatures) with relative algorithm performance to predict the best algorithm(s) for new datasets. Therefore, it is of the utmost importance that the metafeatures used are informative. In Collaborative Filtering, recent research has created an extensive collection of such metafeatures. However, since these are created based on the practitioner’s understanding of the problem, they may not capture the most relevant aspects necessary to properly characterize the problem. We propose to overcome this problem by taking advantage of Representation Learning, which is able to create alternative problem characterizations by having the data guide the design of the representation instead of the practitioner’s opinion. Our hypothesis states that such alternative representations can be used to replace standard metafeatures, hence leading to a more robust approach to Metalearning. We propose a novel procedure specially designed for Collaborative Filtering algorithm selection. The procedure models Collaborative Filtering as graphs and extracts distributed representations using graph2vec. In order to validate its merits, two different algorithm selection frameworks are included and several evaluation scopes are considered. Experimental results show that the proposed procedure creates representations that are competitive with state-of-the-art metafeatures, while requiring significantly less data and without any human input.
 
+Source code:
+
+The code is a series of R scripts, all pertaining to the metalevel procedure. Thus, we do not include in this repository the source code required to train the Collaborative Filtering algorithms nor to use graph2vec. Instead, we provide already the results of such experiments through several CSV files. If you wish to obtain more information regarding this topic, please refer to the official repositories of MyMediaLite (https://github.com/zenogantner/MyMediaLite) and graph2vec (https://github.com/MLDroid/graph2vec_tf).
+
+In terms of the contents provided, we describe now the meaning of each folder and file:
 
 Folders:
 - labelrankingforests-master: source code with Label Ranking algorithms implementation and evaluation and tuning procedures (source code adapted from https://github.com/rebelosa/labelrankingforests)
@@ -20,8 +25,18 @@ Folders:
 
 Files:
 - auxiliary.R: auxiliary functions to process metadata and metatargets
-- LR_evaluation.R: Metalevel Label Ranking LOOCV evaluation procedure
-- LR_meta_experiments.R: main file to evaluate Label Ranking metamodels using CM and cf2vec metafeatures
-- LR_tuning.R: Grid-search Tuning procedures for Label Ranking algorithms
-- LR_grid_search_visualization.R: procedure used to create boxplot visualization for all configurations used in the hyperparameter tuning
+- auxiliary_CF4CF_META: auxiliary file which contains the source code for CF4CF-META framework 
+- baselevel_impact_graphic.R: script to create the graphics to assess the impact on the baselevel performance for all competing approaches
+- CF4CF-META_baselevel_impact.R: script to calculate CF4CF-META's impact on the baselevel performance
+- CF4CF-META_meta_experiments.R: script to calculate CF4CF-META's metalevel evaluation performance
+- LR_baselevel_impact.R: script to calculate LR's impact on the baselevel performance
+- LR_evaluation.R: script that contains auxiliary functions for Label Ranking evaluation
+- LR_grid_search_visualization.R: script used to create boxplot performance visualization for all configurations used in the hyperparameter tuning procedure
+- LR_meta_experiments.R: script to calculate LR's metalevel evaluation performance
+- LR_tuning.R: auxiliary functions to perform grid-search tuning for Label Ranking algorithms
+- metalevel_visualization.R: script to create graphics to assess the metalevel evaluation performance for all competing approaches
+- PCA_metadataset_visualizations.R: script to create the metadataset visualizations using PCA
+- tuningCF.R: auxiliary functions used to perform hyperparameter tuning in CF4CF-META
+
+Furthermore, notice that in addition to provide all metadatasets and algorithm implementations used for each step in the procedure, we also include all metalevel experiment results. This allows to obtain the figures used in the paper without the necessity of running all scripts presented. However, if you do run the experiments again, the results are used to replace the ones provided, thus making the process easily reproducible. Lastly, in order to obtain the figures, you must run each script individually and assess the graphics output.
 
