@@ -1,5 +1,4 @@
-# cf2vec
-Collaborative Filtering dataset embeddings for algorithm selection
+# cf2vec: Collaborative Filtering dataset embeddings for algorithm selection
 
 The code presented is composed by a series of R scripts, all pertaining to the metalevel procedure. Thus, we do not include in this repository the source code required to train the Collaborative Filtering algorithms nor to use graph2vec. Instead, we provide already the results of such experiments through several CSV files in appropriately named folders. If you wish to obtain more information regarding this topic, please refer to the official repositories of MyMediaLite (https://github.com/zenogantner/MyMediaLite) and graph2vec (https://github.com/MLDroid/graph2vec_tf).
 
