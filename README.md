@@ -17,8 +17,6 @@ Folders:
 Files:
 - auxiliary.R: auxiliary functions to process metadata and metatargets
 - baselevel_impact_graphic.R: script to create the graphics to assess the impact on the baselevel performance for all competing approaches
-- CF4CF-META_baselevel_impact.R: script to calculate CF4CF-META's impact on the baselevel performance
-- CF4CF-META_meta_experiments.R: script to calculate CF4CF-META's metalevel evaluation performance
 - LR_baselevel_impact.R: script to calculate LR's impact on the baselevel performance
 - LR_evaluation.R: script that contains auxiliary functions for Label Ranking evaluation
 - LR_grid_search_visualization.R: script used to create boxplot performance visualization for all configurations used in the hyperparameter tuning procedure
@@ -26,7 +24,6 @@ Files:
 - LR_tuning.R: auxiliary functions to perform grid-search tuning for Label Ranking algorithms
 - metalevel_visualization.R: script to create graphics to assess the metalevel evaluation performance for all competing approaches
 - PCA_metadataset_visualizations.R: script to create the metadataset visualizations using PCA
-- tuningCF.R: auxiliary functions used to perform hyperparameter tuning in CF4CF-META
 
 Notice that in addition to provide all metadatasets and algorithm implementations used for each step in the procedure and which guarantee the reproducibility of the presented research, we also include all metalevel experiment results. This allows to obtain the figures used in the paper without the necessity of running all scripts presented. However, if you wish to re-run the experiments, the outcoming results replace the ones provided in the repository, thus making the analysis easily reproducible. Lastly, in order to obtain the figures, you must run each script individually and assess the graphics output. 
 
