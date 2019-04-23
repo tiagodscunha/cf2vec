@@ -16,7 +16,6 @@ Folders:
 
 Files:
 - auxiliary.R: auxiliary functions to process metadata and metatargets
-- auxiliary_CF4CF_META: auxiliary file which contains the source code for CF4CF-META framework 
 - baselevel_impact_graphic.R: script to create the graphics to assess the impact on the baselevel performance for all competing approaches
 - CF4CF-META_baselevel_impact.R: script to calculate CF4CF-META's impact on the baselevel performance
 - CF4CF-META_meta_experiments.R: script to calculate CF4CF-META's metalevel evaluation performance
