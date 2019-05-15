@@ -149,7 +149,7 @@ createGraphs <- function(dt1,dt2,type){
   colnames(dt1_tsne) <- c("V1","V2")
   colnames(dt2_tsne) <- c("V1","V2")
   
-  dt1_tsne$type <- "cf4vec"
+  dt1_tsne$type <- "cf2vec"
   dt1_tsne$dataset <- dt1$V1
   
   dt2_tsne$type <- "CM"

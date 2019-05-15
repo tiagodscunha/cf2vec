@@ -92,13 +92,13 @@ cf4cf_meta_cf2vec_cm_RP <- RP$cf4cf_meta_knn_1
 tmp <- data.frame(
   cf4vec <- unlist(lapply(1:length(best_IR),function(x){mean(best_IR[x],best_RP[x])})),
   Metalearning <- unlist(lapply(1:length(mf_IR),function(x){mean(mf_IR[x],mf_RP[x])})),
-  AverageRankings <- unlist(lapply(1:length(avg_IR),function(x){mean(avg_IR[x],avg_RP[x])})),
-  cf4cf_meta_cf2vec <- unlist(lapply(1:length(best_IR),function(x){mean(cf4cf_meta_cf2vec_IR[x],cf4cf_meta_cf2vec_RP[x])})),
-  cf4cf_meta_cm <- unlist(lapply(1:length(mf_IR),function(x){mean(cf4cf_meta_cf2vec_cm_IR[x],cf4cf_meta_cf2vec_cm_RP[x])}))
+  AverageRankings <- unlist(lapply(1:length(avg_IR),function(x){mean(avg_IR[x],avg_RP[x])}))
+  #cf4cf_meta_cf2vec <- unlist(lapply(1:length(best_IR),function(x){mean(cf4cf_meta_cf2vec_IR[x],cf4cf_meta_cf2vec_RP[x])})),
+  #cf4cf_meta_cm <- unlist(lapply(1:length(mf_IR),function(x){mean(cf4cf_meta_cf2vec_cm_IR[x],cf4cf_meta_cf2vec_cm_RP[x])}))
 )
 
 
-colnames(tmp) <- c("LR+cf2vec","LR+CM","AVG","CF4CF-META+cf2vec","CF4CF-META+CM")
+colnames(tmp) <- c("LR+cf2vec","LR+CM","AVG")#,"CF4CF-META+cf2vec","CF4CF-META+CM")
 
 library(scmamp)
 plotCD (tmp, alpha=0.05, cex=1.25)

@@ -61,9 +61,9 @@ createData <- function(x,inverted, strategy){
     'baseline' = unlist(x[[2]]),
     cf4vec = unlist(x[[3]]),
     Metalearning = unlist(x[[1]]),
-    cf4cf_meta_cf2vec = unlist(x[[4]]),
-    cf4cf_meta_cm = unlist(x[[5]]),
-    AVG = unlist(x[[6]])
+    #cf4cf_meta_cf2vec = unlist(x[[4]]),
+    #cf4cf_meta_cm = unlist(x[[5]]),
+    AVG = unlist(x[[2]])
   )
   rownames(data_graph) <- NULL
   
@@ -80,13 +80,13 @@ createData <- function(x,inverted, strategy){
 IR_prev <- IR
 RP_prev <- RP
 
-load("results/cf4cf_meta_cf2vec_base.Rda")
-IR_prev <- append(IR_prev,list(t(as.data.frame(t(IR$knn)))))
-RP_prev <- append(RP_prev,list(t(as.data.frame(t(RP$knn)))))
-
-load("results/cf4cf_meta_mf_base.Rda")
-IR_prev <- append(IR_prev,list(t(as.data.frame(t(IR$knn)))))
-RP_prev <- append(RP_prev,list(t(as.data.frame(t(RP$knn)))))
+# load("results/cf4cf_meta_cf2vec_base.Rda")
+# IR_prev <- append(IR_prev,list(t(as.data.frame(t(IR$knn)))))
+# RP_prev <- append(RP_prev,list(t(as.data.frame(t(RP$knn)))))
+# 
+# load("results/cf4cf_meta_mf_base.Rda")
+# IR_prev <- append(IR_prev,list(t(as.data.frame(t(IR$knn)))))
+# RP_prev <- append(RP_prev,list(t(as.data.frame(t(RP$knn)))))
 
 load("results/meta_lr_comp_base.Rda")
 IR_prev <- append(IR_prev,list(t(as.data.frame(t(IR$avg)))))
@@ -97,12 +97,12 @@ df2 <- createData(RP_prev,T,"RP")
 
 final <- rbind(df1,df2)
 
-levels(final$variable) <- c(levels(final$variable),"LR+cf2vec","AVG", "LR+CM","CF4CF-META+cf2vec","CF4CF-META+CM")
+levels(final$variable) <- c(levels(final$variable),"LR+cf2vec","AVG", "LR+CM") #,"CF4CF-META+cf2vec","CF4CF-META+CM")
 final$variable[final$variable == 'cf4vec'] <- 'LR+cf2vec'
 final$variable[final$variable == 'AR'] <- 'AVG'
 final$variable[final$variable == 'Metalearning'] <- 'LR+CM'
-final$variable[final$variable == 'cf4cf_meta_cf2vec'] <- 'CF4CF-META+cf2vec'
-final$variable[final$variable == 'cf4cf_meta_cm'] <- 'CF4CF-META+CM'
+#final$variable[final$variable == 'cf4cf_meta_cf2vec'] <- 'CF4CF-META+cf2vec'
+#final$variable[final$variable == 'cf4cf_meta_cm'] <- 'CF4CF-META+CM'
 
 make_graph(final)
 
